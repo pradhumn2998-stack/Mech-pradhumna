@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+  =====================================================================
+  index.html  -  the PAGE FRAME of the Mechanical Design Notes website
+  =====================================================================
+  The chapters themselves live in ch01.js, ch02.js, ch03.js, ch04.js ...
+  The program that builds the pages lives in app.js.
+  The design (colors, layout) lives in style.css.
+
+  All files must be saved in the SAME folder.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MechDesign Notes | Mechanical Design Engineering Handbook</title>
+  <meta name="description" content="Mechanical design engineering notes with formulas, solved examples, interview questions and calculators for CAD designers, design engineers and diploma students.">
+  <meta name="theme-color" content="#0a1a33">
+
+  <!-- Small gear icon for the browser tab -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a1a33'/%3E%3Ccircle cx='50' cy='50' r='22' fill='none' stroke='%23ff7a1a' stroke-width='10'/%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!--
+    Chapter files FIRST, then app.js.
+    When you write a new chapter (for example ch05.js), add one line for it here.
+    "defer" keeps the order and runs them after the page has loaded.
+  -->
+  
+<script src="ch01.js" defer></script>
+<script src="ch02.js" defer></script>
+<script src="ch03.js" defer></script>
+<script src="ch04.js" defer></script>
+<script src="ch05.js" defer></script>
+<script src="app.js" defer></script>
+
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar">
+    <button id="menuBtn" class="icon-btn" type="button" aria-label="Open chapter list" aria-expanded="false" aria-controls="sidebar">&#9776;</button>
+
+    <a class="brand" href="#/" aria-label="MechDesign Notes - home">
+      <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+        <rect width="40" height="40" rx="9" fill="#ff7a1a"/>
+        <circle cx="20" cy="20" r="8" fill="none" stroke="#0a1a33" stroke-width="4"/>
+        <g stroke="#0a1a33" stroke-width="4" stroke-linecap="round">
+          <path d="M20 5v5M20 30v5M5 20h5M30 20h5M9.400 9.400l3.500 3.500M27.100 27.100l3.500 3.500M30.600 9.400l-3.500 3.500M12.900 27.100l-3.500 3.500"/>
+        </g>
+      </svg>
+      <span class="brand-text">MechDesign <b>Notes</b></span>
+    </a>
+
+    <div class="search">
+      <input id="searchBox" type="search" placeholder="Search topics, formulas, terms..." autocomplete="off" aria-label="Search topics, formulas and terms">
+      <div id="searchResults" class="search-results" hidden></div>
+    </div>
+
+    <nav class="top-links" aria-label="Quick links">
+      <a href="#/calc">Calculators</a>
+      <a href="#/fav">Favorites</a>
+      <button id="printBtn" class="btn-print" type="button">Print / PDF</button>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <!-- Chapter list (built by app.js) -->
+    <aside id="sidebar" class="sidebar" aria-label="Chapter list"></aside>
+
+    <!-- Main content (built by app.js) -->
+    <main id="main" class="main" tabindex="-1">
+      <noscript><p class="notice">This website needs JavaScript. Please enable it in Chrome.</p></noscript>
+    </main>
+  </div>
+
+  <div id="scrim" class="scrim" hidden></div>
+
+  <footer class="site-footer">
+    <p><strong>For learning and reference.</strong> Values and formulas are standard textbook relationships in SI units. Always verify design data against the current standards, material datasheets and your company practice before using them in a real design.</p>
+  </footer>
+</body>
+</html>
